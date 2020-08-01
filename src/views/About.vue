@@ -17,8 +17,8 @@
 
     },
     mounted(){
-      instance.show()
-      // this.$loading.show()
+      // instance.show()
+      this.$loading.show()
       let params = {
         a: [1,2,3]
       }
