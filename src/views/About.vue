@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <div class="div1">1</div>
-    <div class="div2">2</div>
+    <!-- <div class="div1">1</div>
+    <div class="div2">2</div> -->
   </div>
 </template>
 <script>
@@ -16,6 +16,7 @@
 
     },
     mounted(){
+      this.$loading()
       let params = {
         a: [1,2,3]
       }
@@ -25,6 +26,7 @@
       api.list().then(res => {
         console.log(res)
       })
+      setTimeout(() => this.$loading.close(), 2000)
     }
   }
 </script>

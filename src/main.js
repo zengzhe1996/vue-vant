@@ -6,12 +6,14 @@ import Vant from 'vant'
 import 'vant/lib/index.css';
 import filter from '@/utils/filter'
 import '@/utils/rem'
+import plugin from '@/utils/plugin'
 
 for (const key in filter) {
   Vue.filter(key, filter[key])
 }
 
 Vue.use(Vant)
+Vue.use(plugin)
 Vue.config.productionTip = false
 
 new Vue({
