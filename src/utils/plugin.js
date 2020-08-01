@@ -1,5 +1,7 @@
 import loading from '../components/loading/loading.vue'
 
+let instance = null;
+
 export default{
   install(Vue){
     let Component =  Vue.extend(loading) // loading 是独立的组件，extend的作用是将loading与vue关联起来
@@ -17,6 +19,11 @@ export default{
         vm.show = false
       }
     }
-    Vue.prototype.$loading = new Loading()
+    instance = new Loading()
+    Vue.prototype.$loading = instance
   }
+}
+
+export {
+  instance
 }

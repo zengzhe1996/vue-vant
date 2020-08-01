@@ -1,11 +1,12 @@
 <template>
   <div class="about">
-    <!-- <div class="div1">1</div>
-    <div class="div2">2</div> -->
+    <div class="div1">1</div>
+    <div class="div2">2</div>
   </div>
 </template>
 <script>
   import api from '@/api/home'
+  import {instance} from '@/utils/plugin'
   export default{
     data(){
       return{
@@ -16,7 +17,8 @@
 
     },
     mounted(){
-      this.$loading.show()
+      instance.show()
+      // this.$loading.show()
       let params = {
         a: [1,2,3]
       }
@@ -24,9 +26,9 @@
       formData.append('a', 1)
       formData.append('b', 1)
       api.list().then(res => {
-        console.log(res)
+
       })
-      setTimeout(() => this.$loading.hide(), 2000)
+      // setTimeout(() => this.$loading.hide(), 2000)
     }
   }
 </script>
