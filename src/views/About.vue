@@ -16,7 +16,7 @@
 
     },
     mounted(){
-      this.$loading()
+      this.$loading.show()
       let params = {
         a: [1,2,3]
       }
@@ -26,7 +26,7 @@
       api.list().then(res => {
         console.log(res)
       })
-      setTimeout(() => this.$loading.close(), 2000)
+      setTimeout(() => this.$loading.hide(), 2000)
     }
   }
 </script>

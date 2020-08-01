@@ -34,7 +34,7 @@
         </li>
       </ul>
     </div>
-    <span class="ft-size-1">Loading</span>
+    <span class="ft-size-1">{{text}}</span>
   </div>
 </template>
 
