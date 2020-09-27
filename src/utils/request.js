@@ -2,14 +2,11 @@ import axios from 'axios';
 import qs from 'qs';
 import { Notify } from 'vant';
 
-// headers = {headers: {'Content-Type': 'application/json;charset=UTF-8'}}
-// headers = {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
-// headers = {headers: {'Content-Type': 'multipart/form-data'}}
-axios.withCredentials = true;
-axios.defaults.timeout = 10 * 1000;
-axios.defaults.baseURL = '/api';
-axios.defaults.headers.common['Authorization'] = 'AUTH_TOKEN';
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+axios.withCredentials = true; // 支持跨域
+axios.defaults.timeout = 10 * 1000; // 请求超时时间
+axios.defaults.baseURL = 'www.baidu.com'; // baseURL
+axios.defaults.headers.common['Authorization'] = 'AUTH_TOKEN'; // 自定义请求头
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'; // 默认请求头Content-Type设置
 
 // 添加请求拦截器
 axios.interceptors.request.use(config => {
@@ -22,12 +19,14 @@ axios.interceptors.request.use(config => {
 
 // 添加响应拦截器
 axios.interceptors.response.use(response => {
-  Notify('1111')
   // 对响应数据做点什么
+  Notify('1111')
+
   return response;
 }, error => {
-  console.log(error, 11111)
   // 对响应错误做点什么
+  console.log(error, 11111)
+
   return Promise.reject(error);
 });
 
@@ -43,9 +42,9 @@ let Instance = class request{
       console.log(error)
     })
   }
-  // 根据参数自动判断以json格式传参还是以FormData格式传参
-  post(url, params = {}){
-    return axios.post(url, params, {headers: {'Content-Type': 'multipart/form-data'}}).then(response => {
+  // axios 请求头默认为content-type:application/json
+  postJson(url, data = {}){
+    return axios.post(url, data, { headers: { 'Content-Type': 'application/json;charset=UTF-8'}}).then(response => {
       console.log(response)
       if(response.success){
         Promise.resolve(response.data)
@@ -57,10 +56,10 @@ let Instance = class request{
     })
   }
   // arrayFormat: 'brackets' === a[] = 1, a[] = 2
-  // allowDots: true === a[1] = 1, a[2] = 2
-  postParam(url, params = {}){
-    var paramsQs = qs.stringify(params, {arrayFormat: 'brackets'})
-    return axios.post(url, paramsQs).then(response => {
+  // allowDots: true === a[1] = 1, a[2] = 2 多层对象嵌套, 可用
+  // var paramsQs = qs.stringify(params, {arrayFormat: 'brackets'})
+  postForm(url, data = {}){
+    return axios.post(url, data, { headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(response => {
       console.log(response)
       if(response.success){
         Promise.resolve(response.data)
