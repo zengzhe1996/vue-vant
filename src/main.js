@@ -7,6 +7,7 @@ import 'vant/lib/index.css';
 import filter from '@/utils/filter'
 import '@/utils/rem'
 import plugin from '@/utils/plugin'
+import "./assets/iconfont/iconfont.css";
 
 for (const key in filter) {
   Vue.filter(key, filter[key])

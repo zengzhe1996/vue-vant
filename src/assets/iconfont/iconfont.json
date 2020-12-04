@@ -1,0 +1,51 @@
+{
+  "id": "2172977",
+  "name": "WeUI风格通用图标",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8478555",
+      "name": "等待",
+      "font_class": "ziyuanx",
+      "unicode": "e6db",
+      "unicode_decimal": 59099
+    },
+    {
+      "icon_id": "15031129",
+      "name": "提示",
+      "font_class": "tishi1",
+      "unicode": "e96b",
+      "unicode_decimal": 59755
+    },
+    {
+      "icon_id": "2131807",
+      "name": "警告",
+      "font_class": "jinggao",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "5135486",
+      "name": "提示",
+      "font_class": "tishi",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "10565430",
+      "name": "提示",
+      "font_class": "zhongyaotishi",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "14514844",
+      "name": "成功",
+      "font_class": "gou2",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    }
+  ]
+}
