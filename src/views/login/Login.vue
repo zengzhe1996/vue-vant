@@ -50,4 +50,7 @@ export default {
       }
     }
   }
+  .c-gray{
+    color: $c-gray;
+  }
 </style>
