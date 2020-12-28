@@ -2,11 +2,12 @@
   <div class="about">
     <!-- <div class="div1">1</div>
     <div class="div2">2</div> -->
+    <input type="text" v-focus>
   </div>
 </template>
 <script>
   import api from '@/api/home'
-  import {instance} from '@/utils/plugin'
+  import {instance} from '@/plugins'
   export default{
     data(){
       return{
@@ -28,7 +29,7 @@
       api.list().then(res => {
 
       })
-      // setTimeout(() => this.$loading.hide(), 2000)
+      setTimeout(() => this.$loading.hide(), 2000)
     }
   }
 </script>

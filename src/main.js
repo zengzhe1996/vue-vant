@@ -7,7 +7,7 @@ import 'vant/lib/index.css';
 import filter from '@/utils/filter'
 import 'amfe-flexible'
 // import '@/utils/rem'
-import plugin from '@/utils/plugin'
+import plugin from '@/plugins'
 import "./assets/iconfont/iconfont.css";
 import './assets/css/common.css'
 import './assets/css/reset.css'
